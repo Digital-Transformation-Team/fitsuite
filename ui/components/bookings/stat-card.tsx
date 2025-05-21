@@ -1,17 +1,23 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { AreaChart, BarChart, LineChart } from "@/components/ui/chart"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { AreaChart, BarChart, LineChart } from "@/components/ui/chart";
 
 interface StatCardProps {
-  title: string
-  value: string | number
-  description?: string
-  chart?: "line" | "bar" | "area"
-  data: any[]
-  category: string
-  index: string
-  colors?: string[]
+  title: string;
+  value: string | number;
+  description?: string;
+  chart?: "line" | "bar" | "area";
+  data: any[];
+  category: string;
+  index: string;
+  colors?: string[];
 }
 
 export function StatCard({
@@ -28,11 +34,15 @@ export function StatCard({
     <Card>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <CardDescription className="text-2xl font-bold">{value}</CardDescription>
+        <CardDescription className="text-2xl font-bold">
+          {value}
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        {description && <p className="text-xs text-muted-foreground mb-2">{description}</p>}
-        {chart === "line" && (
+        {description && (
+          <p className="text-xs text-muted-foreground mb-2">{description}</p>
+        )}
+        {/* {chart === "line" && (
           <LineChart
             data={data}
             index={index}
@@ -70,8 +80,8 @@ export function StatCard({
             showYAxis={false}
             showGridLines={false}
           />
-        )}
+        )} */}
       </CardContent>
     </Card>
-  )
+  );
 }

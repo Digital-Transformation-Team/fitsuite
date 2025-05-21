@@ -1,16 +1,22 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { AreaChart, BarChart, LineChart } from "@/components/ui/chart"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { AreaChart, BarChart, LineChart } from "@/components/ui/chart";
 
 interface ChartCardProps {
-  title: string
-  description?: string
-  value?: string | number
-  chart: "line" | "bar" | "area"
-  data: any[]
-  index: string
-  categories: string[]
-  colors?: string[]
-  className?: string
+  title: string;
+  description?: string;
+  value?: string | number;
+  chart: "line" | "bar" | "area";
+  data: any[];
+  index: string;
+  categories: string[];
+  colors?: string[];
+  className?: string;
 }
 
 export function ChartCard({
@@ -32,7 +38,7 @@ export function ChartCard({
         {value && <div className="text-2xl font-bold">{value}</div>}
       </CardHeader>
       <CardContent>
-        {chart === "line" && (
+        {/* {chart === "line" && (
           <LineChart
             data={data}
             index={index}
@@ -61,8 +67,8 @@ export function ChartCard({
             className="aspect-[4/3]"
             showLegend={true}
           />
-        )}
+        )} */}
       </CardContent>
     </Card>
-  )
+  );
 }
